@@ -1,10 +1,10 @@
 LandisData	"NECN Succession"
 
-Timestep  5
+Timestep  10
 
 SeedingAlgorithm  WardSeedDispersal
 
-InitialCommunities      "./IC_2_20.txt"
+InitialCommunities      "./IC_3_27_Chestnut.txt"
 InitialCommunitiesMap   "./MR_InitialCommunity_2_18.tif"
 ClimateConfigFile 	climate-generator-baseline.txt	
 

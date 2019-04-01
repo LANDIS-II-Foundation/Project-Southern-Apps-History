@@ -5,7 +5,7 @@ Timestep  10
 
 MapNames  biomass/{species}-{ageclass}-{timestep}.img
 
-Species    all ageclass(>300)
+Species    all ageclass(>0)
 
 
 

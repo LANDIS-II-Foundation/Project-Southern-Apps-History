@@ -38,7 +38,7 @@ WaterDecayFunction Ratio <<Linear or Ratio
 ProbabilityEstablishAdjust 	1.0
 InitialMineralN				2.0
 InitialFineFuels 			0.1  << a fraction 0-1.0 of dead wood.
-AtmosphericNSlope			0.0016<< Values from ashville
+AtmosphericNSlope			0.0016 << Values from ashville
 AtmosphericNIntercept		        0.2626 << .1626 from ashville +1.0 lichen correction ratio
 Latitude					36.0
 DenitrificationRate			0.0610

@@ -25,7 +25,7 @@ CellLength  200 << meters, 100 x 100 m = 1 hectare
 
 >> --------------------     -------------------
   
-"NECN Succession"    		 Sapps_NECN_For_Param_4_2_reducedroughtforTsugCana.txt
+"NECN Succession"    		 Sapps_NECN_For_Param_4_4.txt
 
 
 

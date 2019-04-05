@@ -12,14 +12,14 @@ Timestep  10
 >> Fire        Map	___ Event Size ___   Ignition  
 >> region      Code	 Mean  Min    Max    Prob.     k
 >> ---------   ------	----   ----   ----   --------  --------
-    eco1       1	 20    1     6500    0.05    100
+    eco1       1	 20    1     6500    1.0    20
 
 
 >>----------------------
 >> INPUT MAP
 >>----------------------
 
-InitialFireRegionsMap	./Chris_Ecoregion_Cleaned.tif
+InitialFireRegionsMap	Chris_Ecoregion_Cleaned.tif
 
 
 

@@ -49,11 +49,11 @@ For this study, we tested four alternative scenarios:
 
 ## Output Analysis
 
-Model outputs for a
+Model outputs required for analysis were maps of species biomass at 20 year timesteps generated using the Biomass Output extension (Scheller & Mladenoff 2004). At each timestep we analyzed the per-cell average biomass of all oaks on the landscape and the percentage of landscape biomass that was oaks. The script used for this data analysis is available [here](https://github.com/LANDIS-II-Foundation/Project-Southern-Apps-History/tree/master/Support_Scripts).
 
-## Inputs and Data Availability
+## Inputs Availability
 
-Landscape inputs for each model run are available in this repository in this [link](insert-link-here).
+Landscape inputs for each model run are available in this repository in this [link](https://github.com/LANDIS-II-Foundation/Project-Southern-Apps-History/tree/master/Landscape_Inputs). Installers for the LANDIS-II model as well as any needed extensions are available [here](https://github.com/LANDIS-II-Foundation/Project-Southern-Apps-History/tree/master/LANDIS_Installers)
 
 ## Citations
 

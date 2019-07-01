@@ -3,7 +3,7 @@ LandisData  Scenario
 
 Duration  200
 
-Species   SALUH_Species.txt
+Species   Species.txt
 
 
 Ecoregions      ./ecoregions_list.txt

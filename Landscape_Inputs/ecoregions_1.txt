@@ -1,7 +1,0 @@
-LandisData  Ecoregions
-
->>         Map
->> Active  Code  Name   Description
->> ------  ----  -----  -----------
-      yes    1   eco1   "Mesic soils"
-	  no     2 	eco2	"Offmap"

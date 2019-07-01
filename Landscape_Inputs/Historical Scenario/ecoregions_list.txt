@@ -1,0 +1,10 @@
+LandisData  Ecoregions
+
+>>         Map
+>> Active  Code  Name   Description
+>> ------  ----  -----  -----------
+      no    1   eco1   "Offmap"
+	  yes   2 	eco2   "Region2"
+	  yes	3	eco3   "Region3"
+	  yes	4	eco4   "Region4"
+	  yes	5	eco5   "Region5"

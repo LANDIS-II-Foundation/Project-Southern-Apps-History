@@ -1,0 +1,89 @@
+---
+title: "SALUH Data Analysis"
+author: "Christopher Gerstle"
+date: "June 20, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Analysis Basic Infrastructure
+
+```{r}
+library(raster)
+
+OakSpeciesList <- c("QuerAlba","QuerCocc","QuerFalc","QuerRubr","QuerPrin","QuerVelu","QuerStel", "TotalBiomass")
+#AllSpeciesList <- c("QuerAlba","QuerCocc","QuerFalc","QuerRubr","QuerPrin","QuerVelu","QuerStel","AcerPens","AcerRubr","AcerSacc","AescBuck","AmelArbo","BetuAlle","BetuLent","BetuNigr","CaryAlba","CaryCodi","CaryGlab","CaryOvat","CastDent","CornFlor","FaguGran","FrasFirr","FraxAmer","FraxPenn","HaleDipt","IlexOpac","JuglNigr","LiquStyr","LiriTuli","MagnAcum","MagnMacr","NyssSylv","OxydArbo","PiceRube","PinuEnch","PinuPung","PinuRigi","PinuStro","PinuTaed","PinuVirg","PlanOcid","PrunPenn","PrunSero","RobiPseu","SassAlid","TiliAmer","TsugCana","TotalBiomass")
+TimestepsList <- seq(from=0, to=200, by=20)
+
+#Edit to match location in folder
+HisDir <- "R:/fer/rschell/Shared/SALUH Model Outputs/Historic Events/Outputs-Actual/"
+NCBDir <- "R:/fer/rschell/Shared/SALUH Model Outputs/No Chestnut Blight/Outputs-Actual/"
+NFSDir <- "R:/fer/rschell/Shared/SALUH Model Outputs/No Fire Suppression/Outputs-Actual/"
+NTBDir <- "R:/fer/rschell/Shared/SALUH Model Outputs/No Timber Boom/Outputs-Actual/"
+```
+
+## Model output analysis
+
+Import Model Output Maps
+
+```{r}
+for (s in AllSpeciesList){
+  for (i in TimestepsList){
+    map <- raster(paste(NTBDir, "biomass/", s, "-", i, ".img", sep="")) # Edit to match the desired directory
+    assign(x=paste(s, "_",i, sep=""), value = map)
+    rm(map)
+  }
+}
+```
+
+Sum the Oak Biomass per time-step
+
+```{r}
+OakTotal_0 <- `QuerAlba_0`+`QuerCocc_0`+`QuerFalc_0`+`QuerPrin_0`+`QuerRubr_0`+`QuerStel_0`+`QuerVelu_0`
+OakTotal_20 <- `QuerAlba_20`+`QuerCocc_20`+`QuerFalc_20`+`QuerPrin_20`+`QuerRubr_20`+`QuerStel_20`+`QuerVelu_20`
+OakTotal_40 <- `QuerAlba_40`+`QuerCocc_40`+`QuerFalc_40`+`QuerPrin_40`+`QuerRubr_40`+`QuerStel_40`+`QuerVelu_40`
+OakTotal_60 <- `QuerAlba_60`+`QuerCocc_60`+`QuerFalc_60`+`QuerPrin_60`+`QuerRubr_60`+`QuerStel_60`+`QuerVelu_60`
+OakTotal_80 <- `QuerAlba_80`+`QuerCocc_80`+`QuerFalc_80`+`QuerPrin_80`+`QuerRubr_80`+`QuerStel_80`+`QuerVelu_80`
+OakTotal_100 <- `QuerAlba_100`+`QuerCocc_100`+`QuerFalc_100`+`QuerPrin_100`+`QuerRubr_100`+`QuerStel_100`+`QuerVelu_100`
+OakTotal_120 <- `QuerAlba_120`+`QuerCocc_120`+`QuerFalc_120`+`QuerPrin_120`+`QuerRubr_120`+`QuerStel_120`+`QuerVelu_120`
+OakTotal_140 <- `QuerAlba_140`+`QuerCocc_140`+`QuerFalc_140`+`QuerPrin_140`+`QuerRubr_140`+`QuerStel_140`+`QuerVelu_140`
+OakTotal_160 <- `QuerAlba_160`+`QuerCocc_160`+`QuerFalc_160`+`QuerPrin_160`+`QuerRubr_160`+`QuerStel_160`+`QuerVelu_160`
+OakTotal_180 <- `QuerAlba_180`+`QuerCocc_180`+`QuerFalc_180`+`QuerPrin_180`+`QuerRubr_180`+`QuerStel_180`+`QuerVelu_180`
+OakTotal_200 <- `QuerAlba_200`+`QuerCocc_200`+`QuerFalc_200`+`QuerPrin_200`+`QuerRubr_200`+`QuerStel_200`+`QuerVelu_200`
+
+OakTotal_0_perc <- cellStats(OakTotal_0, stat='sum')/cellStats(TotalBiomass_0, stat='sum')
+OakTotal_20_perc <- cellStats(OakTotal_20, stat='sum')/cellStats(TotalBiomass_20, stat='sum')
+OakTotal_40_perc <- cellStats(OakTotal_40, stat='sum')/cellStats(TotalBiomass_40, stat='sum')
+OakTotal_60_perc <- cellStats(OakTotal_60, stat='sum')/cellStats(TotalBiomass_60, stat='sum')
+OakTotal_80_perc <- cellStats(OakTotal_80, stat='sum')/cellStats(TotalBiomass_80, stat='sum')
+OakTotal_100_perc <- cellStats(OakTotal_100, stat='sum')/cellStats(TotalBiomass_100, stat='sum')
+OakTotal_120_perc <- cellStats(OakTotal_120, stat='sum')/cellStats(TotalBiomass_120, stat='sum')
+OakTotal_140_perc <- cellStats(OakTotal_140, stat='sum')/cellStats(TotalBiomass_140, stat='sum')
+OakTotal_160_perc <- cellStats(OakTotal_160, stat='sum')/cellStats(TotalBiomass_160, stat='sum')
+OakTotal_180_perc <- cellStats(OakTotal_180, stat='sum')/cellStats(TotalBiomass_180, stat='sum')
+OakTotal_200_perc <- cellStats(OakTotal_200, stat='sum')/cellStats(TotalBiomass_200, stat='sum')
+
+OakTotal_0_avg <- cellStats(OakTotal_0, stat='sum')/31132
+OakTotal_20_avg <- cellStats(OakTotal_20, stat='sum')/31132
+OakTotal_40_avg <- cellStats(OakTotal_40, stat='sum')/31132
+OakTotal_60_avg <- cellStats(OakTotal_60, stat='sum')/31132
+OakTotal_80_avg <- cellStats(OakTotal_80, stat='sum')/31132
+OakTotal_100_avg <- cellStats(OakTotal_100, stat='sum')/31132
+OakTotal_120_avg <- cellStats(OakTotal_120, stat='sum')/31132
+OakTotal_140_avg <- cellStats(OakTotal_140, stat='sum')/31132
+OakTotal_160_avg <- cellStats(OakTotal_160, stat='sum')/31132
+OakTotal_180_avg <- cellStats(OakTotal_180, stat='sum')/31132
+OakTotal_200_avg <- cellStats(OakTotal_200, stat='sum')/31132
+
+OakTotal_timeline_perc <- c(OakTotal_0_perc, OakTotal_20_perc,OakTotal_40_perc,OakTotal_60_perc,OakTotal_80_perc,OakTotal_100_perc,OakTotal_120_perc,OakTotal_140_perc,OakTotal_160_perc,OakTotal_180_perc,OakTotal_200_perc)
+
+OakTotal_timeline_avg <- c(OakTotal_0_avg, OakTotal_20_avg,OakTotal_40_avg,OakTotal_60_avg,OakTotal_80_avg,OakTotal_100_avg,OakTotal_120_avg,OakTotal_140_avg,OakTotal_160_avg,OakTotal_180_avg,OakTotal_200_avg)
+
+OakTotal_timeline_perc
+
+OakTotal_timeline_avg
+```
+

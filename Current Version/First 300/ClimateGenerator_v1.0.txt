@@ -1,0 +1,15 @@
+LandisData "Climate Config"				
+		
+ClimateTimeSeries			Daily_SequencedYears
+ClimateFile					OneEcoHistoric.csv
+ClimateFileFormat			Daily_Temp-C_Precip-mmDay
+
+SpinUpClimateTimeSeries			Daily_SequencedYears
+SpinUpClimateFile				OneEcoHistoric.csv
+SpinUpClimateFileFormat			Daily_Temp-C_Precip-mmDay
+
+UsingFireClimate			yes
+
+SpringStart				1
+WinterStart				365
+
